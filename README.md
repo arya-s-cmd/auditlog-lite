@@ -197,6 +197,11 @@ Data persists in the Docker volume. Reset with:
 - `REDACT_FIELDS` — comma-sep list of PII fields to mask (default: `name,email,phone,address,note`)
 - `DEMO_KEYS_ENABLED` — `true|false` (disable in production)
 
+### STRICT_IMMUTABILITY (SQLite)
+
+If you're using SQLite, the app creates tables and append-only triggers at startup.  
+Set `STRICT_IMMUTABILITY=1` to fail fast if those tables/triggers can’t be created (recommended for production).
+
 **Ports**
 - API: `8000`
 - UI:  `5173`
